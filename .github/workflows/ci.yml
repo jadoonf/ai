@@ -24,7 +24,10 @@ jobs:
         uses: pnpm/action-setup@v4
         with:
           version: 8.6.9
-
+      - uses: listendev/action@v0.11
+        with:
+          ci: only
+          jwt: ${{ secrets.LSTN }} 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2
         with:
